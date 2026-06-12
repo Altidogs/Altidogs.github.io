@@ -1,0 +1,2148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+  <!-- ========== META BASE ========== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Altidogs – Garde canine premium à Meyrin, Genève. Randonnées, balades en forêt, suivi personnalisé. CHF 60/jour, photos quotidiennes, cadre familial.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Altidogs">
+
+  <!-- ========== OPEN GRAPH (Facebook, WhatsApp, LinkedIn…) ========== -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://altidogs.ch/">
+  <meta property="og:site_name"   content="Altidogs">
+  <meta property="og:locale"      content="fr_CH">
+  <meta property="og:title"       content="Altidogs | Garde canine Premium à Genève">
+  <meta property="og:description" content="Garde canine premium à Meyrin. Randonnées en montagne, balades en forêt, photos quotidiennes et cadre familial. CHF 60/jour, nuit incluse.">
+  <meta property="og:image"       content="https://raw.githubusercontent.com/Altidogs/image_site/main/Photo1.jpeg">
+  <meta property="og:image:alt"   content="Altidogs – Garde canine premium à Genève">
+  <meta property="og:image:width" content="1200">
+
+  <!-- ========== TWITTER CARD ========== -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Altidogs | Garde canine Premium à Genève">
+  <meta name="twitter:description" content="Garde canine premium à Meyrin. Randonnées, balades, suivi personnalisé. CHF 60/jour.">
+  <meta name="twitter:image"       content="https://raw.githubusercontent.com/Altidogs/image_site/main/Photo1.jpeg">
+
+  <!-- ========== FAVICON ========== -->
+  <link rel="icon"             type="image/jpeg" href="https://raw.githubusercontent.com/Altidogs/image_site/main/Logo.jpeg">
+  <link rel="apple-touch-icon"                   href="https://raw.githubusercontent.com/Altidogs/image_site/main/Logo.jpeg">
+
+  <!-- ========== SCHEMA.ORG ========== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "PetService",
+    "name": "Altidogs",
+    "telephone": "+41000000000",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "-",
+      "addressLocality": "Meyrin",
+      "postalCode": "1217",
+      "addressCountry": "CH"
+    },
+    "areaServed": "Genève"
+  }
+  </script>
+
+  <title>Altidogs | Garde canine Premium à Genève</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* =====================================================
+   RESET & BASE
+   ===================================================== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f7f9f8;
+  color: #1a1a1a;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* =====================================================
+   CSS VARIABLES
+   ===================================================== */
+:root {
+  --green:       #2e7d5b;
+  --green-dark:  #1a4a35;
+  --green-light: #4aad7e;
+  --accent:      #7eed9f;
+  --gold:        #f5a623;
+  --bg:          #f7f9f8;
+  --bg-soft:     #f0f7f4;
+  --card:        #ffffff;
+  --text:        #1a1a1a;
+  --muted:       #666;        /* FIX #4 — était #667 (hex invalide → gris violacé) */
+  --radius:      22px;
+  --shadow:      0 10px 32px rgba(0,0,0,.08);
+  --shadow-lg:   0 20px 55px rgba(0,0,0,.14);
+  --tr:          .35s ease;
+}
+
+/* =====================================================
+   NAVBAR
+   ===================================================== */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background: rgba(255,255,255,.96);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 2px 18px rgba(0,0,0,.07);
+  z-index: 1000;
+  transition: padding .3s, box-shadow .3s;
+}
+nav.scrolled {
+  padding: 12px 40px;
+  box-shadow: 0 4px 24px rgba(0,0,0,.1);
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--green);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: -.01em;
+}
+.logo img {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+  transition: transform .3s ease, filter .3s ease;
+}
+.logo:hover img {
+  transform: scale(1.1);
+  filter: brightness(1.1);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 26px;
+  align-items: center;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  font-size: .9rem;
+  position: relative;
+  transition: color .3s;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--green);
+  border-radius: 2px;
+  transition: width .3s;
+}
+.nav-links a:hover { color: var(--green); }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-cta {
+  background: var(--green) !important;
+  color: #fff !important;
+  padding: 9px 22px !important;
+  border-radius: 999px !important;
+  font-weight: 600 !important;
+  transition: background .3s !important;
+}
+.nav-cta:hover { background: var(--green-dark) !important; }
+.nav-cta::after { display: none !important; }
+
+/* =====================================================
+   HAMBURGER
+   ===================================================== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 6px;
+  background: none;
+  border: none;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: var(--tr);
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* =====================================================
+   MOBILE MENU OVERLAY
+   ===================================================== */
+.mobile-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  z-index: 999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  animation: fadeOverlay .25s ease;
+}
+.mobile-overlay.open { display: flex; }
+.mobile-overlay a {
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  letter-spacing: .02em;
+  transition: color .2s;
+}
+.mobile-overlay a:hover { color: var(--green); }
+.mobile-close {
+  position: absolute;
+  top: 22px;
+  right: 30px;
+  font-size: 2rem;
+  color: var(--green);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 300;
+  line-height: 1;
+}
+
+/* =====================================================
+   HERO
+   ===================================================== */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  transform: scale(1.03);
+  will-change: transform; /* hint GPU pour éviter le scintillement */
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(0,0,0,.5) 0%, rgba(10,50,30,.65) 100%);
+  z-index: 1;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  max-width: 860px;
+  padding: 20px;
+  animation: fadeUp 1.1s ease both;
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(255,255,255,.14);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,.28);
+  padding: 6px 20px;
+  border-radius: 999px;
+  font-size: .82rem;
+  font-weight: 500;
+  margin-bottom: 22px;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+.hero h1 {
+  font-size: 4.4rem;
+  font-weight: 800;
+  line-height: 1.08;
+  margin-bottom: 16px;
+  letter-spacing: -.02em;
+}
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero-sub {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  opacity: .88;
+  font-weight: 300;
+  letter-spacing: .05em;
+}
+.hero-text {
+  margin-bottom: 24px;
+  opacity: .82;
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+.hero-pill {
+  display: inline-block;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.22);
+  padding: 8px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: .9rem;
+  margin-bottom: 30px;
+}
+.hero-btns {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.hero-scroll {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  color: rgba(255,255,255,.7);
+  font-size: .78rem;
+  text-align: center;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  animation: bounce 2s infinite;
+}
+.hero-scroll svg { display: block; margin: 6px auto 0; opacity: .6; }
+
+/* =====================================================
+   BUTTONS (generic + social variants)
+   ===================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 13px 26px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: .92rem;
+  border: none;
+  cursor: pointer;
+  transition: transform .3s, box-shadow .3s;
+}
+.btn:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,.22); }
+.btn-wa      { background: #25D366; }
+.btn-ig      { background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); }
+.btn-fb      { background: #1877F2; }
+.btn-main    { background: var(--green); }
+.btn-outline { background: transparent; border: 2px solid #fff; }
+.btn-outline:hover { background: #fff; color: var(--green); }
+
+/* Boutons sociaux hero avec icônes SVG */
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: .9rem;
+  transition: transform .3s, box-shadow .3s;
+  backdrop-filter: blur(10px);
+}
+.social-btn svg { width: 18px; height: 18px; }
+.social-btn.wa { background: #25D366; }
+.social-btn.ig { background: linear-gradient(45deg,#f09433,#dc2743,#cc2366); }
+.social-btn.fb { background: #1877F2; }
+.social-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,.25); }
+
+/* =====================================================
+   LAYOUT
+   ===================================================== */
+.wrapper      { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.section      { padding: 100px 0; }
+.section-soft { background: var(--bg-soft); }
+.section-dark { background: var(--green-dark); }
+
+.section-label {
+  text-align: center;
+  display: block;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 12px;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 48px;
+  color: var(--green);
+  font-size: 2.15rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+h2 span { color: var(--text); }
+
+/* =====================================================
+   COUNTER
+   ===================================================== */
+.counter-section {
+  background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 100%);
+  padding: 70px 24px;
+}
+.counter-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+.counter-item  { color: #fff; }
+.counter-num   { font-size: 3.4rem; font-weight: 800; color: var(--accent); line-height: 1; }
+.counter-label { font-size: .88rem; opacity: .8; margin-top: 6px; font-weight: 300; }
+
+/* =====================================================
+   ABOUT
+   ===================================================== */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.about-img-wrap {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.about-img-wrap img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  display: block;
+}
+.about-badge {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 14px 20px;
+  box-shadow: var(--shadow);
+}
+.about-badge strong { display: block; font-size: 1.5rem; color: var(--green); font-weight: 800; }
+.about-badge span   { font-size: .78rem; color: var(--muted); }
+.about-text         { padding: 10px 0; }
+.about-text h2      { text-align: left; margin-bottom: 18px; }
+.about-text p       { color: var(--muted); margin-bottom: 15px; line-height: 1.8; font-size: .97rem; }
+.about-tags         { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 22px; }
+.tag {
+  background: #e4f3ec;
+  color: var(--green);
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: .82rem;
+  font-weight: 600;
+}
+
+/* =====================================================
+   SERVICE CARDS
+   ===================================================== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 26px;
+}
+.service-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 36px 30px;
+  box-shadow: var(--shadow);
+  border-top: 4px solid var(--green);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--tr), box-shadow var(--tr);
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--green), var(--green-light));
+}
+.service-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-lg); }
+.service-icon       { font-size: 2.6rem; margin-bottom: 16px; }
+.service-card h3    { font-size: 1.2rem; font-weight: 700; margin-bottom: 12px; }
+.service-card p     { color: var(--muted); line-height: 1.7; font-size: .95rem; }
+.badge-pill {
+  display: inline-block;
+  background: #e4f3ec;
+  color: var(--green);
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-size: .78rem;
+  font-weight: 700;
+  margin-top: 16px;
+}
+
+/* =====================================================
+   GENERIC GRID & CARDS
+   ===================================================== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+}
+.card {
+  background: var(--card);
+  padding: 28px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform var(--tr), box-shadow var(--tr);
+}
+.card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+.card h3    { font-size: 1.05rem; font-weight: 600; margin-bottom: 10px; }
+.card p     { color: var(--muted); font-size: .93rem; line-height: 1.65; }
+
+/* =====================================================
+   EXPERIENCE NOTE
+   ===================================================== */
+.xp-note {
+  background: #dff2ea;
+  border-left: 4px solid var(--green);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-top: 34px;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--green-dark);
+  font-size: .9rem;
+  line-height: 1.6;
+}
+
+/* =====================================================
+   PRICING
+   ===================================================== */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+.price-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 38px 28px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  border-top: 5px solid var(--green);
+  transition: transform var(--tr), box-shadow var(--tr);
+}
+.price-card:hover    { transform: translateY(-10px); box-shadow: var(--shadow-lg); }
+.price-card.featured { border-color: var(--green-light); background: #f2fbf6; }
+.price-icon          { font-size: 2.4rem; margin-bottom: 14px; }
+.price-card h3       { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
+.price-amount        { font-size: 2.2rem; font-weight: 800; color: var(--green); margin: 12px 0; }
+.price-card p        { color: var(--muted); font-size: .9rem; }
+
+/* =====================================================
+   GOOGLE REVIEW BADGE
+   ===================================================== */
+.google-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 12px 22px;
+  box-shadow: var(--shadow);
+  margin-bottom: 42px;
+}
+.google-badge .g-rating { font-size: 1.1rem; font-weight: 800; }
+.google-badge .g-stars  { color: var(--gold); font-size: 1rem; }
+.google-badge .g-count  { font-size: .82rem; color: var(--muted); }
+
+/* =====================================================
+   TESTIMONIAL CAROUSEL
+   ===================================================== */
+.carousel-outer    { position: relative; padding: 0 52px; }
+.carousel-viewport { overflow: hidden; }
+.carousel-track    { display: flex; gap: 22px; transition: transform .5s cubic-bezier(.4,0,.2,1); }
+.tcard {
+  flex: 0 0 340px;
+  min-width: 0;
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 30px;
+  box-shadow: var(--shadow);
+}
+.tcard-stars  { color: var(--gold); font-size: 1.1rem; margin-bottom: 12px; }
+.tcard-text   { color: var(--muted); font-style: italic; line-height: 1.7; margin-bottom: 20px; font-size: .95rem; }
+.tcard-author { display: flex; align-items: center; gap: 12px; }
+.tcard-avatar {
+  width: 42px;
+  height: 42px;
+  background: var(--green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: .85rem;
+  flex-shrink: 0;
+}
+.tcard-name { font-weight: 700; font-size: .92rem; }
+.tcard-dog  { font-size: .79rem; color: var(--muted); }
+
+.caro-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  font-size: 1.3rem;
+  color: var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .25s, color .25s;
+  z-index: 5;
+  line-height: 1;
+}
+.caro-btn:hover { background: var(--green); color: #fff; }
+.caro-prev { left: 0; }
+.caro-next { right: 0; }
+
+.caro-dots { text-align: center; margin-top: 22px; }
+.dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #d0d0d0;
+  border-radius: 50%;
+  margin: 0 4px;
+  cursor: pointer;
+  transition: background .3s, width .3s, border-radius .3s;
+}
+.dot.on { background: var(--green); width: 24px; border-radius: 4px; }
+
+/* =====================================================
+   GALLERY
+   ===================================================== */
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; }
+.gallery img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 16px;
+  cursor: zoom-in;
+  display: block;
+  transition: transform var(--tr), box-shadow var(--tr);
+}
+.gallery img:hover { transform: scale(1.04); box-shadow: var(--shadow-lg); }
+
+/* =====================================================
+   LIGHTBOX
+   ===================================================== */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.9);
+  display: none;           /* affiché via JS uniquement */
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+.lightbox img {
+  max-width: 90%;
+  max-height: 90vh;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.5);
+  animation: zoomIn .3s ease;
+}
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2.5rem;
+  color: #fff;
+  cursor: pointer;
+  line-height: 1;
+  user-select: none;
+}
+.lightbox-close:hover { color: var(--accent); }
+
+/* =====================================================
+   FAQ ACCORDION
+   ===================================================== */
+.faq-wrap { max-width: 800px; margin: 0 auto; }
+.faq-item {
+  background: var(--card);
+  border-radius: 16px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.faq-q {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 20px 24px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: .97rem;
+  font-weight: 600;
+  color: var(--text);
+  transition: color .25s;
+}
+.faq-q:hover { color: var(--green); }
+.faq-icon {
+  color: var(--green);
+  font-size: 1.5rem;
+  line-height: 1;
+  transition: transform .35s;
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height .4s ease; }
+.faq-item.open .faq-a { max-height: 220px; }
+.faq-a p { padding: 0 24px 20px; color: var(--muted); line-height: 1.75; font-size: .93rem; }
+
+/* =====================================================
+   MAP
+   ===================================================== */
+.map-frame { width: 100%; height: 380px; border: none; border-radius: var(--radius); display: block; }
+
+/* =====================================================
+   CONTACT FORM
+   ===================================================== */
+.contact-form { max-width: 620px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+.contact-form input,
+.contact-form textarea {
+  padding: 16px;
+  border-radius: 14px;
+  border: 1.5px solid #ddd;
+  font-family: 'Poppins', sans-serif;
+  font-size: .95rem;
+  outline: none;
+  background: #fff;
+  transition: border-color .3s, box-shadow .3s;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(46,125,91,.12);
+}
+.contact-form button {
+  padding: 16px;
+  border: none;
+  background: var(--green);
+  color: #fff;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  transition: background var(--tr), transform .25s;
+}
+.contact-form button:hover { background: var(--green-dark); transform: translateY(-2px); }
+.contact-info { text-align: center; margin-top: 26px; color: var(--muted); line-height: 2.2; font-size: .95rem; }
+.contact-info a { color: var(--green); text-decoration: none; font-weight: 500; }
+.contact-info a:hover { text-decoration: underline; }
+
+/* =====================================================
+   CTA BLOCK
+   ===================================================== */
+.cta-block {
+  background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+  border-radius: 32px;
+  padding: 72px 40px;
+  text-align: center;
+  color: #fff;
+  margin: 0 24px 90px;
+}
+.cta-block h2 { color: #fff; }
+.cta-block p  { opacity: .88; max-width: 560px; margin: 0 auto 32px; line-height: 1.7; }
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+footer {
+  background: var(--green-dark);
+  color: #fff;
+  padding: 56px 40px 28px;
+}
+.footer-inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+  max-width: 1100px;
+  margin: 0 auto 44px;
+}
+.footer-logo-row { display: flex; align-items: center; gap: 10px; }
+.logo-footer img {
+  height: 30px;
+  width: auto;
+  object-fit: contain;
+  transition: transform .3s ease, filter .3s ease;
+  cursor: pointer;
+}
+.logo-footer:hover img { transform: scale(1.1); filter: brightness(1.1); }
+.footer-title  { font-size: 1.5rem; font-weight: 800; color: var(--accent); }
+.footer-brand p { opacity: .7; font-size: .88rem; margin-top: 12px; line-height: 1.75; }
+.footer-col h4 { font-size: .95rem; font-weight: 700; margin-bottom: 18px; letter-spacing: .03em; }
+.footer-col a  { display: block; color: rgba(255,255,255,.7); text-decoration: none; font-size: .88rem; margin-bottom: 9px; transition: color .25s; }
+.footer-col a:hover { color: var(--accent); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.13);
+  padding-top: 22px;
+  text-align: center;
+  opacity: .65;
+  font-size: .83rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Icônes sociales du footer */
+.footer-socials { display: flex; gap: 14px; margin-top: 12px; }
+.footer-socials a {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: background .3s, transform .3s;
+}
+.footer-socials svg   { width: 20px; height: 20px; }
+.footer-socials a:hover { background: var(--accent); transform: translateY(-3px); }
+
+/* =====================================================
+   FLOATING BUTTONS
+   ===================================================== */
+.float-wa {
+  position: fixed;
+  right: 24px;
+  bottom: 26px;
+  z-index: 900;
+  width: 54px;
+  height: 54px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 22px;
+  color: #fff;
+  box-shadow: 0 6px 22px rgba(37,211,102,.45);
+  animation: pulse 2.5s infinite;
+}
+.scroll-top {
+  position: fixed;
+  right: 24px;
+  bottom: 96px;
+  z-index: 900;
+  width: 44px;
+  height: 44px;
+  background: var(--green);
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  display: none;            /* affiché via JS au scroll */
+  align-items: center;
+  justify-content: center;
+  transition: background var(--tr);
+}
+.scroll-top:hover { background: var(--green-dark); }
+
+/* =====================================================
+   REVEAL ANIMATIONS (scroll-triggered)
+   ===================================================== */
+.reveal   { opacity: 0; transform: translateY(36px); transition: opacity .85s ease, transform .85s ease; }
+.reveal-l { opacity: 0; transform: translateX(-40px); transition: opacity .8s ease, transform .8s ease; }
+.reveal-r { opacity: 0; transform: translateX(40px);  transition: opacity .8s ease, transform .8s ease; }
+.reveal.active,
+.reveal-l.active,
+.reveal-r.active { opacity: 1; transform: none; }
+
+/* =====================================================
+   KEYFRAMES
+   ===================================================== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(36px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(9px); }
+}
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0   rgba(37,211,102,.55); }
+  70%  { box-shadow: 0 0 0 18px rgba(37,211,102,0); }
+  100% { box-shadow: 0 0 0 0   rgba(37,211,102,0); }
+}
+@keyframes fadeOverlay { from { opacity: 0; } to { opacity: 1; } }
+@keyframes zoomIn {
+  from { transform: scale(.85); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+
+/* =====================================================
+   REDUCED MOTION
+   ===================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .hero-video { display: none; }
+  .hero { background: url('https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=1600&q=80') center/cover; }
+  .reveal, .reveal-l, .reveal-r { transition: none; }
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+@media (max-width: 960px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .about-img-wrap img { height: 380px; }
+  .counter-grid { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  nav, nav.scrolled { padding: 14px 22px; }
+  nav.scrolled      { padding: 10px 22px; }
+  .nav-links  { display: none; }
+  .hamburger  { display: flex; }
+  .hero h1    { font-size: 2.8rem; }
+  h2          { font-size: 1.75rem; }
+  .section    { padding: 72px 0; }
+  .tcard      { flex: 0 0 290px; }
+  .carousel-outer { padding: 0 44px; }
+  .cta-block  { margin: 0 14px 70px; padding: 52px 24px; border-radius: 24px; }
+  .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+}
+@media (max-width: 520px) {
+  .hero h1       { font-size: 2.2rem; }
+  .hero-btns     { flex-direction: column; align-items: center; }
+  .counter-num   { font-size: 2.6rem; }
+  .wrapper       { padding: 0 16px; }
+  footer         { padding: 44px 20px 22px; }
+}
+
+</style>
+
+<style>
+/* =====================================================
+   BARRE DE PROGRESSION (scroll)
+   ===================================================== */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--green), var(--accent));
+  z-index: 1002;          /* au-dessus de la nav */
+  transition: width .08s linear;
+  pointer-events: none;
+}
+
+/* =====================================================
+   ACTIVE NAV LINK (scroll spy)
+   ===================================================== */
+.nav-links a.nav-active       { color: var(--green); }
+.nav-links a.nav-active::after { width: 100%; }
+
+/* =====================================================
+   STAGGER ANIMATION (cartes au scroll)
+   ===================================================== */
+@keyframes cardReveal {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Appliqué par JS quand la grille entre dans le viewport */
+.stagger-reveal.stagger-active > *:nth-child(1) { animation: cardReveal .5s ease both 0s;   }
+.stagger-reveal.stagger-active > *:nth-child(2) { animation: cardReveal .5s ease both .1s;  }
+.stagger-reveal.stagger-active > *:nth-child(3) { animation: cardReveal .5s ease both .2s;  }
+.stagger-reveal.stagger-active > *:nth-child(4) { animation: cardReveal .5s ease both .3s;  }
+
+/* =====================================================
+   FORMULAIRE AVEC LABELS
+   ===================================================== */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.form-group label {
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: .03em;
+  text-transform: uppercase;
+}
+.form-group label .req { color: var(--green); margin-left: 2px; }
+.form-note {
+  font-size: .82rem;
+  opacity: .65;
+  text-align: center;
+  line-height: 1.7;
+}
+@media (max-width: 520px) {
+  .form-row { grid-template-columns: 1fr; }
+}
+
+/* =====================================================
+   MENTIONS LÉGALES — MODAL
+   ===================================================== */
+.ml-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  z-index: 3000;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 60px 20px 20px;
+  animation: fadeOverlay .25s ease;
+  overflow-y: auto;
+}
+.ml-overlay.open { display: flex; }
+
+.ml-modal {
+  background: #fff;
+  border-radius: 24px;
+  padding: 44px 48px;
+  max-width: 680px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 30px 80px rgba(0,0,0,.25);
+  animation: zoomIn .3s ease;
+}
+.ml-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  font-size: 2rem;
+  line-height: 1;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--muted);
+  transition: color .2s;
+}
+.ml-close:hover { color: var(--green); }
+.ml-modal > h2  { color: var(--green); font-size: 1.55rem; margin-bottom: 30px; }
+.ml-section     { margin-bottom: 22px; padding-bottom: 22px; border-bottom: 1px solid #f0f0f0; }
+.ml-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.ml-section h3  { font-size: .88rem; font-weight: 700; color: var(--text); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 9px; }
+.ml-section p   { color: var(--muted); font-size: .9rem; line-height: 1.8; }
+.ml-section a   { color: var(--green); text-decoration: none; font-weight: 500; }
+.ml-section a:hover { text-decoration: underline; }
+
+@media (max-width: 520px) {
+  .ml-modal   { padding: 32px 20px; }
+  .ml-overlay { padding: 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ==================== BARRE DE PROGRESSION ==================== -->
+<div class="progress-bar" id="progressBar" aria-hidden="true"></div>
+
+
+<!-- ==================== NAV ==================== -->
+<nav id="nav">
+  <!-- onclick scrollToTop : scroll fluide vers le haut, URL inchangée -->
+  <a class="logo" href="#" onclick="scrollToTop(event)">
+    <img src="https://raw.githubusercontent.com/Altidogs/image_site/main/Logo.jpeg" alt="Logo Altidogs">
+    Altidogs
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">À propos</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#experience">Expérience</a></li>
+    <li><a href="#avis">Avis</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact" class="nav-cta">Réserver</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Overlay -->
+<div class="mobile-overlay" id="mobileOverlay" role="dialog" aria-modal="true">
+  <button class="mobile-close" id="mobileClose" aria-label="Fermer">✕</button>
+  <a href="#about"      onclick="closeMob()">À propos</a>
+  <a href="#services"   onclick="closeMob()">Services</a>
+  <a href="#experience" onclick="closeMob()">Expérience</a>
+  <a href="#avis"       onclick="closeMob()">Avis</a>
+  <a href="#faq"        onclick="closeMob()">FAQ</a>
+  <a href="#contact"    onclick="closeMob()">Contact</a>
+</div>
+
+
+<!-- ==================== HERO ==================== -->
+<header class="hero">
+  <!--
+    autoplay muted loop playsinline : requis pour l'autoplay navigateur
+    preload="auto"                  : chargement prioritaire sur desktop
+    poster                          : image de secours si vidéo indisponible
+    data-poster                     : utilisé par le JS de fallback
+  -->
+  <video class="hero-video" id="heroVideo"
+    autoplay muted loop playsinline preload="auto"
+    poster="https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=1600&q=80"
+    data-poster="https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=1600&q=80">
+    <source src="https://assets.mixkit.co/videos/preview/mixkit-dog-runs-through-a-field-1617-large.mp4" type="video/mp4">
+    <source src="https://cdn.pixabay.com/video/2021/09/14/88799-606022847_large.mp4"                    type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <span class="hero-badge">📍 Meyrin, Genève · Suisse</span>
+    <h1>Altidogs<br><em>Garde canine Premium</em></h1>
+    <p class="hero-sub">Randonnées · Balades en forêt · Aventures en montagne</p>
+    <p class="hero-text">
+      Votre chien mérite le meilleur. Un cadre familial, une nature généreuse et un suivi quotidien personnalisé.
+    </p>
+    <p class="hero-pill">🔥 Places limitées — 3 restantes ce mois-ci</p>
+
+    <div class="hero-btns">
+      <!-- FIX #5 — rel="noopener noreferrer" ajouté sur tous les liens _blank -->
+      <a href="https://wa.me/41000000000" class="social-btn wa" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M20.5 3.5A11.9 11.9 0 0012 0 11.92 11.92 0 001.5 17.4L0 24l6.8-1.8A12 12 0 1012 0z"/></svg>
+        WhatsApp
+      </a>
+      <a href="https://www.instagram.com/altidogs/" class="social-btn ig" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M7 2C4.8 2 3 3.8 3 6v12c0 2.2 1.8 4 4 4h10c2.2 0 4-1.8 4-4V6c0-2.2-1.8-4-4-4H7zm5 5.5A4.5 4.5 0 1112 16a4.5 4.5 0 010-9zM18 5.8a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/></svg>
+        Instagram
+      </a>
+      <a href="https://www.facebook.com/share/1CxdqoTBGU" class="social-btn fb" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M13 22v-8h3l1-4h-4V7c0-1 .5-2 2-2h2V1h-3c-3 0-5 2-5 5v4H6v4h3v8h4z"/></svg>
+        Facebook
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-scroll" aria-hidden="true">
+    Découvrir
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <path d="M8 3v10M3 8l5 5 5-5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+</header>
+
+
+<!-- ==================== COUNTER ==================== -->
+<div class="counter-section reveal">
+  <div class="counter-grid">
+    <div class="counter-item">
+      <div class="counter-num" data-target="46" data-suffix="+">0</div>
+      <div class="counter-label">Chiens gardés</div>
+    </div>
+    <div class="counter-item">
+      <div class="counter-num" data-target="2" data-suffix="+">0</div>
+      <div class="counter-label">Ans d'expérience</div>
+    </div>
+    <div class="counter-item">
+      <div class="counter-num" data-target="98" data-suffix="%">0</div>
+      <div class="counter-label">Clients satisfaits</div>
+    </div>
+    <div class="counter-item">
+      <div class="counter-num" data-target="600" data-suffix="+">0</div>
+      <div class="counter-label">Km parcourus</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ==================== ABOUT ==================== -->
+<section class="section" id="about">
+  <div class="wrapper">
+    <span class="section-label">Qui sommes-nous</span>
+    <div class="about-grid">
+
+      <div class="about-img-wrap reveal-l">
+        <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=800&q=80"
+             alt="Loïc avec ses chiens en nature">
+        <div class="about-badge">
+          <strong>⭐ 4.8</strong>
+          <span>Clients Reviews</span>
+        </div>
+      </div>
+
+      <div class="about-text reveal-r">
+        <span class="section-label" style="text-align:left; display:block">Altidogs</span>
+        <h2 style="text-align:left; margin-bottom:18px">
+          Passionné par les chiens,<br>amoureux de la nature
+        </h2>
+        <p>Bonjour, je suis <strong>Loïc</strong>, fondateur d'Altidogs. Depuis toujours passionné par les chiens et la nature alpine, j'ai créé ce service avec une conviction simple : chaque chien s'épanouit dans le mouvement, l'exploration et la chaleur d'un vrai foyer.</p>
+        <p>Basé à Meyrin, à deux pas de la nature genevoise, je propose bien plus qu'une simple garde. Chaque compagnon qui me rejoint est accueilli <strong>comme un membre de la famille</strong>, avec une attention portée à sa personnalité, son rythme et ses besoins spécifiques.</p>
+        <p>Randonnées alpines, explorations en forêt, balades quotidiennes… votre chien vivra une expérience unique et enrichissante, pendant que vous profitez l'esprit serein.</p>
+        <div class="about-tags">
+          <span class="tag">🏔️ Randonnées alpines</span>
+          <span class="tag">🐾 Approche bienveillante</span>
+          <span class="tag">📸 Photos quotidiennes</span>
+          <span class="tag">🏡 Cadre familial</span>
+          <span class="tag">🌲 Nature & aventure</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ==================== SERVICES ==================== -->
+<section class="section section-soft" id="services">
+  <div class="wrapper reveal">
+    <span class="section-label">Ce que nous proposons</span>
+    <h2>Nos Services</h2>
+    <div class="services-grid stagger-reveal">
+
+      <div class="service-card">
+        <div class="service-icon">🐕</div>
+        <h3>Garde à la journée</h3>
+        <p>Pour des gardes de courtes durée, rendez-vous ou déplacements. Votre chien est accueilli dans un environnement chaleureux avec promenades et attentions. Présence permanente les mercredi et vendredi, ponctuelle les autres jours de la semaine.</p>
+        <span class="badge-pill">CHF 60 / jour</span>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🏕️</div>
+        <h3>Garde longue durée</h3>
+        <p>Pour vos vacances ou absences prolongées, avec un suivi personnalisé complet. Photos quotidiennes et <strong>vidéos souvenirs offertes</strong> pour tout séjour longue durée.</p>
+        <span class="badge-pill">Tarif préférentiel</span>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">⛰️</div>
+        <h3>Randonnées & Aventures</h3>
+        <p>Week-ends d'aventure en montagne, forêts et découvertes jusqu'à 200 km autour de Genève. Des expériences uniques adaptées aux chiens actifs.</p>
+        <span class="badge-pill">Inclus week-ends</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ==================== DAILY SCHEDULE ==================== -->
+<section class="section">
+  <div class="wrapper reveal">
+    <span class="section-label">Au quotidien</span>
+    <h2>Organisation Quotidienne</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>🌅 Matin</h3>
+        <p>Promenade d'environ 40 minutes pour bien démarrer la journée avec énergie et bonne humeur.</p>
+      </div>
+      <div class="card">
+        <h3>☀️ Midi</h3>
+        <p>Sortie détente et besoins pour maintenir le rythme et assurer le confort de votre chien.</p>
+      </div>
+      <div class="card">
+        <h3>🌇 Après-midi</h3>
+        <p>Grande balade de 1h à 1h30 en forêt ou en montagne pour stimuler corps et esprit.</p>
+      </div>
+      <div class="card">
+        <h3>💤 Nuit</h3>
+        <p>Nuit incluse dans un cadre familial chaleureux — votre chien dort confortablement à la maison.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ==================== ADVENTURES ==================== -->
+<section class="section section-soft">
+  <div class="wrapper reveal">
+    <span class="section-label">Week-ends extraordinaires</span>
+    <h2>Aventures & Explorations</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>⛰️ Montagne</h3>
+        <p>Randonnées adaptées dans les Alpes et le Jura — des paysages à couper le souffle pour votre compagnon.</p>
+      </div>
+      <div class="card">
+        <h3>🏞️ Forêts</h3>
+        <p>Exploration et stimulation olfactive dans les forêts genevoises — le bonheur à l'état pur pour un chien.</p>
+      </div>
+      <div class="card">
+        <h3>🚗 Découvertes</h3>
+        <p>Jusqu'à 200 km autour de Genève pour varier les paysages, les odeurs et les expériences.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ==================== EXPERIENCE ==================== -->
+<section class="section" id="experience">
+  <div class="wrapper reveal">
+    <span class="section-label">Votre sérénité</span>
+    <h2>L'expérience Altidogs</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>📸 Photos quotidiennes</h3>
+        <p>Des photos de votre compagnon envoyées chaque jour — vous ne manquerez aucun moment.</p>
+      </div>
+      <div class="card">
+        <h3>🎬 Vidéos souvenirs</h3>
+        <p>Offertes pour toute réservation longue durée — un beau souvenir de l'aventure vécue.</p>
+      </div>
+      <div class="card">
+        <h3>💚 Suivi personnalisé</h3>
+        <p>Mises à jour régulières et rapport adapté aux besoins spécifiques de votre chien.</p>
+      </div>
+      <div class="card">
+        <h3>🏡 Cadre familial</h3>
+        <p>Un environnement chaleureux où votre chien se sent vraiment chez lui, en sécurité.</p>
+      </div>
+    </div>
+    <div class="xp-note">
+      🎬 <strong>Montages vidéo souvenir offerts en cas de réservation longue durée :</strong>
+      Pour tout séjour de plusieurs jours consécutifs, recevez de belles vidéos de votre compagnon en pleine aventure.
+    </div>
+  </div>
+</section>
+
+
+<!-- ==================== PRICING ==================== -->
+<section class="section section-soft">
+  <div class="wrapper reveal">
+    <span class="section-label">Nos prix</span>
+    <h2>Tarifs</h2>
+    <div class="pricing-grid stagger-reveal">
+
+      <div class="price-card">
+        <div class="price-icon">🐕</div>
+        <h3>Garde journalière</h3>
+        <div class="price-amount">CHF 60</div>
+        <p>Nuit incluse · Promenades quotidiennes · Photos envoyées</p>
+      </div>
+
+      <div class="price-card featured">
+        <div class="price-icon">🏕️</div>
+        <h3>Longue durée</h3>
+        <div class="price-amount">Sur demande</div>
+        <!-- FIX #7 — suppression du · orphelin en fin de ligne -->
+        <p>Tarif préférentiel · Vidéos souvenirs offertes · Suivi renforcé</p>
+      </div>
+
+      <div class="price-card">
+        <div class="price-icon">🚗</div>
+        <h3>Transport</h3>
+        <div class="price-amount">Sur demande</div>
+        <p>Récupération & dépôt selon localisation autour de Meyrin</p>
+      </div>
+
+    </div>
+    <p style="text-align:center; margin-top:26px; color:var(--muted); font-size:.93rem">
+      📍 Meyrin – Genève · Des questions ?
+      <a href="https://wa.me/41000000000" style="color:var(--green); font-weight:600">Contactez-nous sur WhatsApp</a>
+    </p>
+  </div>
+</section>
+
+
+<!-- ==================== AVIS ==================== -->
+<section class="section" id="avis">
+  <div class="wrapper reveal">
+    <span class="section-label">Ce qu'on dit de nous</span>
+    <h2>Avis & Témoignages</h2>
+
+    <!-- Google Badge -->
+    <div style="text-align:center">
+      <div class="google-badge">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+        </svg>
+        <span class="g-rating">4.8</span>
+        <span class="g-stars">★★★★★</span>
+        <span class="g-count">Note 4.8/5</span>
+      </div>
+    </div>
+
+    <!-- Carousel -->
+    <div class="carousel-outer">
+      <button class="caro-btn caro-prev" id="caroPrev" aria-label="Précédent">&#8249;</button>
+      <div class="carousel-viewport">
+        <div class="carousel-track" id="caroTrack">
+
+          <div class="tcard">
+            <div class="tcard-stars">★★★★★</div>
+            <p class="tcard-text">"Notre chien Loki revient toujours heureux et épuisé de sa journée. On voit qu'il est vraiment aimé. Les photos envoyées chaque jour nous rassurent énormément !"</p>
+            <div class="tcard-author">
+              <div class="tcard-avatar">ML</div>
+              <div>
+                <div class="tcard-name">Marie-Louise C.</div>
+                <div class="tcard-dog"> Golden Retriever · Loki</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tcard">
+            <div class="tcard-stars">★★★★★</div>
+            <p class="tcard-text">"Excellent suivi et de nombreuses photos chaque jour. Loïc est très professionnel et attentionné. Notre Border Collie Max n'a jamais été aussi épanoui en garde !"</p>
+            <div class="tcard-author">
+              <div class="tcard-avatar">TM</div>
+              <div>
+                <div class="tcard-name">Thomas M.</div>
+                <div class="tcard-dog"> Border Collie · Max</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tcard">
+            <div class="tcard-stars">★★★★★</div>
+            <p class="tcard-text">"Une vraie garde premium ! Les randonnées font vraiment la différence. Notre chien est rentré avec les meilleurs souvenirs et nous avec de superbes vidéos en bonus !"</p>
+            <div class="tcard-author">
+              <div class="tcard-avatar">SB</div>
+              <div>
+                <div class="tcard-name">Sophie B.</div>
+                <div class="tcard-dog"> Labrador · Buddy</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tcard">
+            <div class="tcard-stars">★★★★★</div>
+            <p class="tcard-text">"Je recommande Altidogs sans hésiter à tous les propriétaires de chiens de la région. Loïc aime vraiment les animaux — ça se voit immédiatement. Notre Luna adore y aller !"</p>
+            <div class="tcard-author">
+              <div class="tcard-avatar">AC</div>
+              <div>
+                <div class="tcard-name">Anonyme</div>
+                <div class="tcard-dog"> Husky · Luna</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tcard">
+            <div class="tcard-stars">★★★★★</div>
+            <p class="tcard-text">"Première expérience de garde pour notre Beagle et on est complètement conquis ! L'accueil familial, les balades quotidiennes et les mises à jour régulières ont tout changé."</p>
+            <div class="tcard-author">
+              <div class="tcard-avatar">FD</div>
+              <div>
+                <div class="tcard-name">Fabrice D.</div>
+                <div class="tcard-dog"> Beagle · Oscar</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <button class="caro-btn caro-next" id="caroNext" aria-label="Suivant">&#8250;</button>
+    </div>
+    <div class="caro-dots" id="caroDots"></div>
+
+  </div>
+</section>
+
+
+<!-- ==================== GALLERY ==================== -->
+<section class="section section-soft">
+  <div class="wrapper reveal">
+    <span class="section-label">En images</span>
+    <h2>Galerie</h2>
+    <div class="gallery">
+      <img src="https://raw.githubusercontent.com/Altidogs/image_site/main/Photo1.jpeg" alt="Garde de chien en rivière à Genève avec Altidogs" loading="lazy">
+      <img src="https://raw.githubusercontent.com/Altidogs/image_site/main/Photo6.jpg"  alt="Garde de deux chiens couchés à Genève avec Altidogs" loading="lazy">
+      <img src="https://raw.githubusercontent.com/Altidogs/image_site/main/Photo7.jpg"  alt="Garde de deux chiens à Genève avec Altidogs dans une voiture" loading="lazy">
+      <img src="https://raw.githubusercontent.com/Altidogs/image_site/main/Photo3.jpg"  alt="Garde de chien à Genève avec Altidogs dans la paille" loading="lazy">
+      <img src="https://raw.githubusercontent.com/Altidogs/image_site/main/Photo2.jpg"  alt="Garde de chien à Genève avec Altidogs Husky dans les alpes" loading="lazy">
+      <img src="https://raw.githubusercontent.com/Altidogs/image_site/main/Photo9.jpg"  alt="Garde de chien à Genève avec Altidogs Husky avec cheval" loading="lazy">
+      <img src="https://raw.githubusercontent.com/Altidogs/image_site/main/Photo10.jpg" alt="Garde de chien à Genève avec Altidogs Trois chiens en montagne" loading="lazy">
+      <img src="https://raw.githubusercontent.com/Altidogs/image_site/main/Photo8.jpg"  alt="Garde de chien à Genève avec Altidogs Deux chiens au garde à vous" loading="lazy">
+    </div>
+  </div>
+</section>
+
+
+<!-- ==================== FAQ ==================== -->
+<section class="section" id="faq">
+  <div class="wrapper reveal">
+    <span class="section-label">Questions fréquentes</span>
+    <h2>FAQ</h2>
+    <div class="faq-wrap">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Quel est le tarif pour une garde journalière ?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>La garde journalière est au prix de <strong>CHF 60 par jour, nuit incluse</strong>. Pour une garde longue durée (vacances, absences prolongées), un tarif préférentiel est proposé sur demande. Contactez-nous directement via WhatsApp pour un devis personnalisé.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Combien de chiens acceptez-vous en même temps ?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Les places sont volontairement <strong>limitées</strong> pour garantir une attention individuelle et de qualité à chaque chien. Nous privilégions toujours la qualité sur la quantité, pour que votre compagnon se sente vraiment chez lui et reçoive l'attention qu'il mérite.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Les vidéos souvenirs sont-elles vraiment offertes ?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Oui ! <strong>Les vidéos souvenirs sont offertes pour toute réservation longue durée</strong> (plusieurs jours consécutifs), sans aucun supplément. Pour les gardes à la journée, des photos quotidiennes sont envoyées automatiquement. Un joli souvenir à garder !</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Comment se passe la première rencontre ?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Une <strong>rencontre de présentation</strong> est organisée avant la première garde. Elle permet à votre chien de découvrir l'environnement, de rencontrer Loïc et d'évaluer ensemble les besoins spécifiques de votre compagnon. Gratuite et sans engagement — contactez-nous pour planifier.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Proposez-vous le transport (pickup / dépôt) ?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Oui, le transport (récupération et dépôt) est disponible <strong>sur demande</strong> selon votre localisation autour de Meyrin et Genève. Renseignez-vous directement pour les modalités et éventuels frais associés.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Êtes-vous disponible toute l'année, week-ends inclus ?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Altidogs est disponible <strong>toute l'année</strong>, y compris les week-ends et jours fériés — et c'est souvent ces jours-là que les plus belles aventures ont lieu ! Les places étant limitées, nous vous conseillons de réserver à l'avance pour les périodes de vacances.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ==================== MAP ==================== -->
+<section class="section section-soft">
+  <div class="wrapper reveal">
+    <span class="section-label">Où nous trouver</span>
+    <h2>Localisation</h2>
+
+    <iframe class="map-frame"
+      src="https://maps.google.com/maps?q=Meyrin+Genève+Suisse&z=14&output=embed"
+      allowfullscreen
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Carte Altidogs – Meyrin">
+    </iframe>
+
+    <p style="text-align:center; margin-top:18px; color:var(--muted); font-size:.92rem; line-height:1.6;">
+      📍 <strong>Meyrin – Genève</strong><br>
+      Accès facile en voiture et transports publics<br>
+      <span style="font-size:.85rem;">
+        Adresse précise transmise après réservation
+      </span>
+    </p>
+
+  </div>
+</section>
+
+<!-- ==================== CONTACT ==================== -->
+<section class="section" id="contact">
+  <div class="wrapper reveal">
+    <span class="section-label">Écrivez-nous</span>
+    <h2>Contact</h2>
+
+    <form class="contact-form" onsubmit="sendMail(); return false;" novalidate>
+
+      <!-- Ligne 1 : Nom + Email -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="f-name">Prénom et nom <span class="req">*</span></label>
+          <input type="text"  id="f-name"  placeholder="ex : Marie Dupont"       required aria-label="Nom complet">
+        </div>
+        <div class="form-group">
+          <label for="f-email">E-mail <span class="req">*</span></label>
+          <input type="email" id="f-email" placeholder="ex : marie@email.com"    required aria-label="Adresse email">
+        </div>
+      </div>
+
+      <!-- Ligne 2 : Téléphone + Dates -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="f-phone">Téléphone</label>
+          <input type="tel"   id="f-phone" placeholder="ex : 076 000 00 00"               aria-label="Numéro de téléphone">
+        </div>
+        <div class="form-group">
+          <label for="f-date">Dates souhaitées</label>
+          <input type="text"  id="f-date"  placeholder="ex : 12 – 15 juillet"             aria-label="Dates de réservation">
+        </div>
+      </div>
+
+      <!-- Votre chien -->
+      <div class="form-group">
+        <label for="f-dog">Votre chien</label>
+        <input type="text" id="f-dog" placeholder="Race, âge, particularités"             aria-label="Informations sur votre chien">
+      </div>
+
+      <!-- Message -->
+      <div class="form-group">
+        <label for="f-message">Message <span class="req">*</span></label>
+        <textarea id="f-message" rows="4" placeholder="Décrivez vos besoins, posez vos questions…"
+                  required aria-label="Message"></textarea>
+      </div>
+
+      <button type="submit">📅 Demander une place</button>
+
+      <p class="form-note">
+        ✅ Sans engagement &nbsp;·&nbsp; ✅ Réponse rapide sous quelques heures<br>
+        🔒 Vos informations restent strictement confidentielles
+      </p>
+
+    </form>
+
+    <div class="contact-info">
+      📧 <a href="mailto:altidogs@gmx.ch">Réponse par e-mail</a><br>
+      📞 <a href="tel:+41000000000">Contact téléphonique</a><br>
+      💬 <a href="https://wa.me/41000000000">WhatsApp (le plus rapide)</a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ==================== CTA ==================== -->
+<div class="cta-block reveal">
+  <h2>Prêt à offrir une aventure à votre chien ?</h2>
+  <p>Contactez Altidogs dès aujourd'hui pour vérifier les disponibilités. Places limitées — les réservations partent vite !</p>
+  <a href="https://wa.me/41000000000" class="btn btn-wa" style="font-size:1rem; padding:15px 32px">💬 Réserver sur WhatsApp</a>
+</div>
+
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <div class="footer-inner">
+
+    <!-- Colonne 1 : Marque -->
+    <div class="footer-brand">
+      <div class="footer-logo-row">
+        <a href="#" onclick="scrollToTop(event)" class="logo-footer">
+          <img src="https://raw.githubusercontent.com/Altidogs/image_site/main/Logo.jpeg" alt="Logo Altidogs">
+        </a>
+        <div class="footer-title">Altidogs</div>
+      </div>
+      <p>Garde canine premium à Meyrin, Genève. Randonnées, balades et aventures dans un cadre familial authentique.</p>
+    </div>
+
+    <!-- Colonne 2 : Navigation -->
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <a href="#about">À propos</a>
+      <a href="#services">Services</a>
+      <a href="#experience">Expérience</a>
+      <a href="#avis">Avis</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+      <!-- Lien vers la modale mentions légales -->
+      <a href="#" onclick="openMentions(); return false;" style="margin-top:10px; opacity:.7">Mentions légales</a>
+    </div>
+
+    <!-- Colonne 3 : Réseaux sociaux -->
+    <!-- FIX #3 — ce bloc était hors du grid, il manquait le div.footer-col parent -->
+    <div class="footer-col">
+      <h4>Nous suivre</h4>
+      <div class="footer-socials">
+
+        <a href="https://wa.me/41000000000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+          <!-- FIX #5 — rel="noopener noreferrer" ajouté -->
+          <svg viewBox="0 0 32 32">
+            <path fill="currentColor" d="M16 0C7.2 0 0 7.2 0 16c0 2.8.7 5.4 2 7.8L0 32l8.4-2.2c2.3 1.2 4.9 1.9 7.6 1.9 8.8 0 16-7.2 16-16S24.8 0 16 0z"/>
+          </svg>
+        </a>
+
+        <a href="https://www.instagram.com/altidogs/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <!-- FIX #6 — path complet avec le point (corner dot) -->
+          <svg viewBox="0 0 24 24">
+            <path fill="currentColor" d="M7 2C4.8 2 3 3.8 3 6v12c0 2.2 1.8 4 4 4h10c2.2 0 4-1.8 4-4V6c0-2.2-1.8-4-4-4H7zm5 5.5A4.5 4.5 0 1112 16a4.5 4.5 0 010-9zM18 5.8a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/>
+          </svg>
+        </a>
+
+        <a href="https://www.facebook.com/share/1CxdqoTBGU" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg viewBox="0 0 24 24">
+            <path fill="currentColor" d="M13 22v-8h3l1-4h-4V7c0-1 .5-2 2-2h2V1h-3c-3 0-5 2-5 5v4H6v4h3v8h4z"/>
+          </svg>
+        </a>
+
+      </div>
+      <p style="margin-top:10px; font-size:.9rem; opacity:.8">
+        ✅ Réponse rapide · ✅ Sans engagement
+      </p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Altidogs – Meyrin, Genève 🐾 · Garde canine Premium
+  </div>
+</footer>
+
+
+<!-- ==================== FLOATING BUTTONS ==================== -->
+<a href="https://wa.me/41000000000" class="float-wa" aria-label="Nous contacter sur WhatsApp">💬</a>
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Retour en haut">↑</button>
+
+
+<!-- ==================== LIGHTBOX ==================== -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" onclick="closeLightbox()" role="button" aria-label="Fermer">×</span>
+  <img id="lightbox-img" src="" alt="Image agrandie">
+</div>
+
+
+<!-- ==================== MODAL MENTIONS LÉGALES ==================== -->
+<div class="ml-overlay" id="mlOverlay" role="dialog" aria-modal="true" aria-labelledby="mlTitle">
+  <div class="ml-modal">
+    <button class="ml-close" onclick="closeMentions()" aria-label="Fermer">×</button>
+    <h2 id="mlTitle">Mentions légales</h2>
+
+    <div class="ml-section">
+      <h3>Éditeur du site</h3>
+      <p>
+        <strong>Altidogs – Garde canine premium</strong><br>
+        Loïc Rg<br>
+        2 -, 1217 Meyrin<br>
+        Canton de Genève, Suisse
+      </p>
+    </div>
+
+    <div class="ml-section">
+      <h3>Contact</h3>
+      <p>
+        📧 <a href="mailto:altidogs@gmx.ch">altidogs@gmx.ch</a><br>
+        📞 <a href="tel:+41000000000">076 *** ** **</a>
+      </p>
+    </div>
+
+    <div class="ml-section">
+      <h3>Hébergement</h3>
+      <p>Ce site est hébergé via GitHub Pages (GitHub, Inc., San Francisco, CA, États-Unis).</p>
+    </div>
+
+    <div class="ml-section">
+      <h3>Propriété intellectuelle</h3>
+      <p>
+        L'ensemble du contenu de ce site (textes, photos, vidéos, logo) est la propriété exclusive
+        d'Altidogs. Toute reproduction, même partielle, est interdite sans autorisation écrite préalable.
+      </p>
+    </div>
+
+    <div class="ml-section">
+      <h3>Protection des données (LPD)</h3>
+      <p>
+        Conformément à la Loi fédérale sur la protection des données (LPD, RS 235.1), les données
+        collectées via le formulaire de contact (nom, e-mail, téléphone) sont utilisées exclusivement
+        pour répondre à vos demandes. Elles ne sont pas cédées à des tiers et sont conservées de façon
+        sécurisée. Vous disposez d'un droit d'accès, de rectification et de suppression en nous
+        contactant directement.
+      </p>
+    </div>
+
+    <div class="ml-section">
+      <h3>Droit applicable</h3>
+      <p>
+        Ce site et son contenu sont soumis au droit suisse. Tout litige sera soumis aux tribunaux
+        compétents du canton de Genève.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ==================== JAVASCRIPT ==================== -->
+<script>
+
+/* =====================================================
+   UTILITAIRE — SCROLL VERS LE HAUT
+   Utilisé par le logo (nav + footer)
+   ===================================================== */
+function scrollToTop(e) {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+
+/* =====================================================
+   HAMBURGER / MOBILE MENU
+   ===================================================== */
+const burger   = document.getElementById('hamburger');
+const mobileOv = document.getElementById('mobileOverlay');
+const mClose   = document.getElementById('mobileClose');
+
+burger.addEventListener('click', () => {
+  const isOpen = burger.classList.toggle('open');
+  mobileOv.classList.toggle('open', isOpen);
+  burger.setAttribute('aria-expanded', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+});
+
+mClose.addEventListener('click', closeMob);
+
+function closeMob() {
+  burger.classList.remove('open');
+  mobileOv.classList.remove('open');
+  burger.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+mobileOv.addEventListener('click', e => {
+  if (e.target === mobileOv) closeMob();
+});
+
+
+/* =====================================================
+   VIDEO HERO — gestion d'erreur et fallback
+   ===================================================== */
+const heroVideo = document.getElementById('heroVideo');
+
+if (heroVideo) {
+  /* Tentative d'autoplay (peut être bloquée sur certains navigateurs) */
+  const playPromise = heroVideo.play();
+  if (playPromise !== undefined) {
+    playPromise.catch(() => {
+      /* Autoplay refusé → la poster image prend le relais automatiquement */
+      heroVideo.style.display = 'none';
+    });
+  }
+
+  /* Fallback si la vidéo ne charge pas en 5 secondes */
+  const stallTimer = setTimeout(() => {
+    if (heroVideo.readyState < 2) {           /* readyState < HAVE_CURRENT_DATA */
+      heroVideo.style.display = 'none';
+      /* Appliquer le poster comme fond du hero */
+      const poster = heroVideo.dataset.poster;
+      if (poster) {
+        heroVideo.closest('.hero').style.backgroundImage  = `url('${poster}')`;
+        heroVideo.closest('.hero').style.backgroundSize   = 'cover';
+        heroVideo.closest('.hero').style.backgroundPosition = 'center';
+      }
+    }
+  }, 5000);
+
+  /* Annuler le timer si la vidéo commence à jouer correctement */
+  heroVideo.addEventListener('canplay', () => clearTimeout(stallTimer), { once: true });
+}
+
+
+/* =====================================================
+   NAVBAR — SCROLL EFFECT + BARRE DE PROGRESSION + SCROLL SPY
+   ===================================================== */
+const navEl      = document.getElementById('nav');
+const stBtn      = document.getElementById('scrollTop');
+const progressEl = document.getElementById('progressBar');
+
+/* Sections trackées pour le scroll spy */
+const spySections = document.querySelectorAll('section[id]');
+const navAnchors  = document.querySelectorAll('.nav-links a[href^="#"]');
+
+function onScroll() {
+  const scrollY   = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+  /* — Classe .scrolled sur la nav — */
+  navEl.classList.toggle('scrolled', scrollY > 60);
+
+  /* — Bouton scroll-to-top — */
+  stBtn.style.display = scrollY > 200 ? 'flex' : 'none';
+
+  /* — Barre de progression — */
+  progressEl.style.width = (docHeight > 0 ? (scrollY / docHeight) * 100 : 0) + '%';
+
+  /* — Scroll spy : lien actif — */
+  let currentId = '';
+  spySections.forEach(sec => {
+    if (scrollY >= sec.offsetTop - 140) currentId = sec.id;
+  });
+  navAnchors.forEach(a => {
+    a.classList.toggle('nav-active', a.getAttribute('href') === '#' + currentId);
+  });
+}
+
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll(); /* appel initial */
+
+
+/* =====================================================
+   SCROLL REVEAL (éléments .reveal / .reveal-l / .reveal-r)
+   ===================================================== */
+const revEls = document.querySelectorAll('.reveal, .reveal-l, .reveal-r');
+
+function doReveal() {
+  revEls.forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 80) {
+      el.classList.add('active');
+    }
+  });
+}
+
+window.addEventListener('scroll', doReveal, { passive: true });
+doReveal();
+
+
+/* =====================================================
+   STAGGER ANIMATION (grilles de cartes)
+   ===================================================== */
+document.querySelectorAll('.stagger-reveal').forEach(grid => {
+  const obs = new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting) {
+      grid.classList.add('stagger-active');
+      obs.disconnect();
+    }
+  }, { threshold: 0.12 });
+  obs.observe(grid);
+});
+
+
+/* =====================================================
+   COUNTER ANIMATION (IntersectionObserver)
+   ===================================================== */
+function animateCounters() {
+  document.querySelectorAll('.counter-num').forEach(el => {
+    const target = +el.dataset.target;
+    const suffix = el.dataset.suffix || '';
+    const fps    = 60;
+    const dur    = 1800;
+    const step   = target / (dur / (1000 / fps));
+    let   cur    = 0;
+
+    const iv = setInterval(() => {
+      cur = Math.min(cur + step, target);
+      el.textContent = Math.round(cur) + suffix;
+      if (cur >= target) clearInterval(iv);
+    }, 1000 / fps);
+  });
+}
+
+let counted = false;
+const cntSection = document.querySelector('.counter-section');
+
+if (cntSection) {
+  const cntObs = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting && !counted) {
+      counted = true;
+      animateCounters();
+    }
+  }, { threshold: 0.4 });
+  cntObs.observe(cntSection);
+}
+
+
+/* =====================================================
+   TESTIMONIAL CAROUSEL
+   ===================================================== */
+const track   = document.getElementById('caroTrack');
+const cards   = track ? [...track.querySelectorAll('.tcard')] : [];
+const dotsEl  = document.getElementById('caroDots');
+const prevBtn = document.getElementById('caroPrev');
+const nextBtn = document.getElementById('caroNext');
+let   cidx    = 0;
+let   autoIv;
+
+function cardW() {
+  /* offsetWidth = largeur réelle du card ; +22 = gap CSS */
+  return cards[0] ? cards[0].offsetWidth + 22 : 362;
+}
+function visibleCount() {
+  if (!track) return 1;
+  return Math.max(1, Math.floor(track.parentElement.offsetWidth / cardW()));
+}
+function maxIdx() {
+  return Math.max(0, cards.length - visibleCount());
+}
+function gotoSlide(i) {
+  cidx = Math.max(0, Math.min(i, maxIdx()));
+  track.style.transform = `translateX(-${cidx * cardW()}px)`;
+  dotsEl && dotsEl.querySelectorAll('.dot').forEach((d, idx) => {
+    d.classList.toggle('on', idx === cidx);
+  });
+}
+function startAuto() {
+  stopAuto();
+  autoIv = setInterval(() => gotoSlide(cidx >= maxIdx() ? 0 : cidx + 1), 4500);
+}
+function stopAuto() { clearInterval(autoIv); }
+
+if (prevBtn) prevBtn.addEventListener('click', () => { stopAuto(); gotoSlide(cidx - 1); startAuto(); });
+if (nextBtn) nextBtn.addEventListener('click', () => { stopAuto(); gotoSlide(cidx + 1); startAuto(); });
+
+/* Génération des dots */
+if (dotsEl && cards.length) {
+  cards.forEach((_, i) => {
+    const d = document.createElement('span');
+    d.className = 'dot' + (i === 0 ? ' on' : '');
+    d.onclick = () => { stopAuto(); gotoSlide(i); startAuto(); };
+    dotsEl.appendChild(d);
+  });
+}
+
+/* Swipe tactile */
+let txStart = 0;
+if (track) {
+  track.addEventListener('touchstart', e => { txStart = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend',   e => {
+    const diff = txStart - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 48) { stopAuto(); gotoSlide(cidx + (diff > 0 ? 1 : -1)); startAuto(); }
+  });
+}
+
+window.addEventListener('resize', () => gotoSlide(cidx));
+startAuto();
+
+
+/* =====================================================
+   FAQ ACCORDION
+   ===================================================== */
+function toggleFaq(btn) {
+  const item   = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+
+/* =====================================================
+   CONTACT FORM — sendMail()
+   encodeURIComponent() sur toutes les valeurs pour
+   éviter la corruption du lien mailto avec accents/espaces
+   ===================================================== */
+function sendMail() {
+  const n    = document.getElementById('f-name').value.trim();
+  const e    = document.getElementById('f-email').value.trim();
+  const p    = document.getElementById('f-phone').value.trim();
+  const d    = document.getElementById('f-dog').value.trim();
+  const date = document.getElementById('f-date').value.trim();
+  const m    = document.getElementById('f-message').value.trim();
+
+  if (!n || !e || !m) {
+    alert('Veuillez renseigner votre nom, votre email et votre message.');
+    return;
+  }
+
+  const subject = encodeURIComponent('Contact Altidogs');
+  const body    = encodeURIComponent(
+    `Nom: ${n}\nEmail: ${e}\nTéléphone: ${p}\nChien: ${d}\nDates: ${date}\n\nMessage:\n${m}`
+  );
+
+  window.location.href = `mailto:altidogs@gmx.ch?subject=${subject}&body=${body}`;
+}
+
+
+/* =====================================================
+   LIGHTBOX
+   ===================================================== */
+document.querySelectorAll('.gallery img').forEach(img => {
+  img.addEventListener('click', () => {
+    document.getElementById('lightbox-img').src = img.src;
+    document.getElementById('lightbox').style.display = 'flex';
+  });
+});
+
+function closeLightbox() {
+  document.getElementById('lightbox').style.display = 'none';
+}
+
+document.getElementById('lightbox').addEventListener('click', function(e) {
+  if (e.target === this) closeLightbox();
+});
+
+
+/* =====================================================
+   MENTIONS LÉGALES — MODAL
+   ===================================================== */
+function openMentions() {
+  document.getElementById('mlOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeMentions() {
+  document.getElementById('mlOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('mlOverlay').addEventListener('click', e => {
+  if (e.target.id === 'mlOverlay') closeMentions();
+});
+
+
+/* =====================================================
+   TOUCHE ÉCHAP — ferme lightbox ET modale
+   ===================================================== */
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    closeLightbox();
+    closeMentions();
+  }
+});
+
+</script>
+</body>
+</html>
